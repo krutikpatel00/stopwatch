@@ -76,18 +76,38 @@
             function countStart() {
                   if (minsec_count <= 100) {
                         minsec_count++;
-                        secmin.innerHTML = minsec_count;
-                        if (minsec_count === 100) {
+                        if (minsec_count < 10) {
+                              secmin.innerHTML = "0" + minsec_count;
+                        } else {
+                              secmin.innerHTML = minsec_count;
+                        }
+
+                        if (minsec_count === 99) {
                               sec_count++;
-                              sec.innerHTML = sec_count;
+                              if (sec_count < 10) {
+                                    sec.innerHTML = "0" + sec_count;
+                              } else {
+                                    sec.innerHTML = sec_count;
+                              }
+
                               minsec_count = 0;
                               if (sec_count === 60) {
                                     min_count++;
-                                    min.innerHTML = min_count;
+                                    if (min_count < 10) {
+                                          min.innerHTML = min_count;
+                                    } else {
+                                          min.innerHTML = min_count;
+                                    }
+
                                     sec_count = 0;
                                     if (min_count === 60) {
                                           hour_count++;
-                                          hour.innerHTML = hour_count;
+                                          if (min_count < 10) {
+                                                hour.innerHTML = "0" + hour_count;
+                                          } else {
+                                                hour.innerHTML = hour_count;
+                                          }
+
                                           min_count = 0;
                                           if (hour_count == 24) {
                                                 minsec_count = 0;
@@ -134,7 +154,7 @@
                   sec.innerHTML = sec_count;
                   hour.innerHTML = hour_count;
                   s = true;
-            })
+            });
       </script>
 </body>
 
